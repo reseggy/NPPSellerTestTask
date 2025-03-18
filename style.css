@@ -1,0 +1,593 @@
+/* так как по тз нужно предоставить всего 2 файла в ответе (html и css) решил не создавать отдельный файл reset.css и встроил его в style.css, начало моего кода на 130 строке*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --color-text: #252c32;
+  --color-additional: #4094f7;
+  --color-additional-hover: #1d83f8;
+  --color-additional-active: #166ac9;
+  --color-border: #dde2e4;
+  --color-placeholder: #9aa6ac;
+  --color-status: #84919a;
+  --color-button-bg: #eef0f2;
+  --color-button-hover: #cfcfcf;
+  --color-button-active: #afafaf;
+  --background-color: #f4faff;
+  --color-white: #ffffff;
+  --color-separator: #d7edff;
+
+  /* Типографика */
+  --font-family: "Inter", sans-serif;
+  --font-size-default: 14px;
+  --font-size-large: 16px;
+  --font-size-small: 12px;
+
+  /* Отступы */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-ad: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+
+  /* Границы и тени */
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 10px;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  font-size: var(--font-size-default);
+}
+
+.text {
+  line-height: 24px;
+}
+
+.headerSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  min-height: 65px;
+  gap: 215px;
+}
+
+.headerLogo {
+  height: 65px;
+  width: 139px;
+}
+
+.navigationList {
+  display: flex;
+  gap: 10px;
+}
+
+.navigationItem {
+  min-width: 84px;
+  text-decoration: none;
+  list-style: none;
+  border-bottom: 1px solid var(--color-additional);
+}
+
+.navigationLink {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.headerUser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 65px;
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.user {
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px dashed #0e73f64f;
+}
+
+.headerUserProfile {
+  color: #0e73f6;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.headerUserLogout {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.main {
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+.sectionTrips {
+  display: flex;
+  flex-direction: column;
+}
+
+.newTrip {
+  display: flex;
+  gap: 24px;
+  margin: 18px 0 14px 16px;
+}
+
+.titleTrip {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.buttonNewTrip {
+  display: flex;
+  gap: 4px;
+  border: none;
+  background-color: var(--color-additional);
+  border-radius: var(--border-radius-sm);
+  padding: 0 var(--spacing-sm);
+  cursor: pointer;
+}
+
+.buttonNewTrip:hover {
+  background-color: var(--color-additional-hover);
+}
+
+.buttonNewTrip:active {
+  background-color: var(--color-additional-active);
+}
+
+.textNewTripButton {
+  color: #f6f8f9;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: var(--font-family);
+}
+
+.tripsFiltersSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 16px;
+}
+
+.dateFilters {
+  display: flex;
+  gap: 16px;
+}
+
+.dateFilter {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.calendarButton {
+  width: 180px;
+  max-height: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: transparent;
+  border: 1px solid #dde2e4;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs)
+    var(--spacing-ad);
+  cursor: pointer;
+}
+
+.calendarText {
+  font-size: var(--font-size-default);
+}
+
+.inputPlaceholder {
+  color: var(--color-placeholder);
+}
+
+.mainFilters {
+  display: flex;
+  gap: 32px;
+  max-height: 32px;
+}
+
+.searchContainer {
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #dde2e4;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs)
+    var(--spacing-ad);
+}
+
+.searchInput {
+  width: 100%;
+  font-family: var(--font-family);
+  font-size: var(--font-size-default);
+  color: var(--color-text);
+  border: none;
+  padding: 0;
+  background-color: var(--color-white);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput::placeholder {
+  color: var(--color-placeholder);
+}
+
+.buttonSearch {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  height: 24px;
+}
+
+.resetFiltersButton {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.textResetButton {
+  color: var(--color-additional);
+}
+
+.resetFiltersButton:hover .textResetButton {
+  color: #2e6eb8;
+}
+
+.resetFiltersButton:active .textResetButton {
+  color: #255994;
+}
+
+.customCheckbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.arhiveSetting {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.customCheckbox + label {
+  position: relative;
+  padding-left: var(--spacing-lg); /* 16px (размер чекбокса) + 8px (отступ) */
+  cursor: pointer;
+  user-select: none;
+}
+
+.customCheckbox + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 1px solid #dee2e6;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-white);
+}
+
+.customCheckbox:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-65%) rotate(45deg);
+  width: 5px;
+  height: 10px;
+  border-bottom: 2px solid var(--color-additional);
+  border-right: 2px solid var(--color-additional);
+}
+
+.customCheckbox + label:hover::before {
+  border-color: var(--color-additional);
+}
+
+.labelText {
+  font-size: 12px;
+}
+
+.separators {
+  margin: 7px 0;
+  display: flex;
+}
+.firstSeparator {
+  height: 2px;
+  width: 360px;
+  background-color: var(--color-additional);
+}
+
+.secondSeparator {
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-separator);
+}
+
+.tripsSection {
+  padding: var(--spacing-sm);
+}
+
+.tripCardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tripCardItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Добавлена тень для визуального выделения */
+}
+
+.tripInformation {
+  max-height: 48px;
+  display: flex;
+  gap: 28px;
+}
+
+.tripData {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dataTitle {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.dataTripNumber {
+  color: var(--color-additional);
+  border-bottom: 1px solid #4095f76e;
+  width: fit-content; /* для подчеркивания только под текстом, как в макете */
+}
+
+.tripStatus {
+  align-items: center;
+}
+
+.statusTitle {
+  color: #84919a;
+  gap: 8px;
+}
+
+.dataDocumentsButton {
+  color: #5b6871;
+  border: none;
+  line-height: 16px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  cursor: pointer;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--color-button-bg);
+}
+
+.dataDocumentsButton:hover {
+  background-color: var(--color-button-hover);
+}
+
+.dataDocumentsButton:active {
+  background-color: var(--color-button-active);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
+  .tripInformation {
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 992px) {
+  .mainFilters {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    max-height: none;
+  }
+
+  .searchContainer {
+    width: 100%;
+  }
+
+  .dateFilters {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .tripsFiltersSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .arhiveSetting {
+    margin-top: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    gap: 10px;
+  }
+
+  .tripCardItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .tripInformation {
+    flex-direction: column;
+    max-height: none;
+    width: 100%;
+  }
+
+  .tripStatus {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
